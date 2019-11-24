@@ -1,7 +1,6 @@
 package model;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.UUID;
 
 public class Place implements Serializable {
@@ -15,13 +14,13 @@ public class Place implements Serializable {
     private MainAttraction mainAttraction;
     private int parishCode;
     private int costForEntry;
-    private Date openingHours;
+    private String openingHours;
 
     public Place() {
         this.guid = UUID.randomUUID().toString();
     }
 
-    public Place(String name, String description, String address, String photoLink, String contactNumber, MainAttraction mainAttraction, int parishCode, int costForEntry, Date openingHours) {
+    public Place(String name, String description, String address, String photoLink, String contactNumber, MainAttraction mainAttraction, int parishCode, int costForEntry, String openingHours) {
         this.guid = UUID.randomUUID().toString();
         this.name = name;
         this.description = description;
@@ -102,11 +101,11 @@ public class Place implements Serializable {
         this.costForEntry = costForEntry;
     }
 
-    public Date getOpeningHours() {
+    public String getOpeningHours() {
         return openingHours;
     }
 
-    public void setOpeningHours(Date openingHours) {
+    public void setOpeningHours(String openingHours) {
         this.openingHours = openingHours;
     }
 

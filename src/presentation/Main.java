@@ -1,5 +1,6 @@
 package presentation;
 
+import fileOperations.FileProcess;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,6 +20,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+
+        FileProcess.readPlacesFromFile();
+
         mainStage = primaryStage;
         root = FXMLLoader.load(getClass().getResource("/views/main.fxml"));
         primaryStage.setTitle("Hello World");
