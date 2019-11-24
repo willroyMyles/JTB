@@ -4,13 +4,6 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
 
-enum  MainAttraction{
-    JerkChicken,
-     RiverTours,
-     WaterSlides
-
-}
-
 public class Place implements Serializable {
 
     private String guid;
