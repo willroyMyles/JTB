@@ -5,8 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
@@ -32,6 +31,7 @@ public class AddPlaceController implements Initializable {
     ChoiceBox parishChoice, mainAttractionChoice;
     @FXML
     ImageView image;
+
 
     private File imageFile;
 
@@ -67,6 +67,8 @@ public class AddPlaceController implements Initializable {
         ImageIO.write(img , ext , new File(filename) );
 
         p.setPhotoLink(filename);
+        ImageView photoImage = new ImageView(new File(filename).toURI().toString());
+        p.setImage(photoImage);
 
         FileProcess.list.add(p);
         FileProcess.writePlacesToFile();
@@ -94,4 +96,9 @@ public class AddPlaceController implements Initializable {
         mainAttractionChoice.setItems(attraction);
 
     }
+
+    //view all places control
+
+
+
 }

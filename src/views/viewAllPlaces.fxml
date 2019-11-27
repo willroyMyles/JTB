@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="967.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewAllPlacesController">
+   <children>
+      <Label layoutX="80.0" layoutY="38.0" text="View All Places">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Label>
+      <Button layoutX="14.0" layoutY="44.0" mnemonicParsing="false" text="&lt;-" />
+      <TableView fx:id="table" layoutX="29.0" layoutY="100.0" prefHeight="278.0" prefWidth="911.0">
+        <columns>
+            <TableColumn fx:id="cid" prefWidth="75.0" text="Id" />
+            <TableColumn fx:id="cname" prefWidth="75.0" text="name" />
+            <TableColumn fx:id="cdescription" prefWidth="75.0" text="description" />
+            <TableColumn fx:id="caddress" prefWidth="75.0" text="address" />
+            <TableColumn fx:id="cparish" prefWidth="75.0" text="parish" />
+            <TableColumn fx:id="cattraction" prefWidth="75.0" text="attraction" />
+            <TableColumn fx:id="ccontact" prefWidth="75.0" text="contact" />
+            <TableColumn fx:id="ccost" prefWidth="75.0" text="entry cost" />
+            <TableColumn fx:id="chours" prefWidth="75.0" text="hours" />
+            <TableColumn fx:id="cphoto" prefWidth="75.0" text="photo" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

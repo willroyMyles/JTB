@@ -2,22 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/fileOperations/FileProcess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/ViewAllPlacesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Di Gud Place Dem! V2/META-INF/Di Gud Place Dem! V2.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Di Gud Place Dem! V2/controller/AddPlaceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Di Gud Place Dem! V2/controller/AddPlaceController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Di Gud Place Dem! V2/controller/JTBAController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Di Gud Place Dem! V2/controller/JTBAController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Di Gud Place Dem! V2/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Di Gud Place Dem! V2/controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Di Gud Place Dem! V2/controller/VisitorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Di Gud Place Dem! V2/controller/VisitorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Di Gud Place Dem! V2/model/MainAttraction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Di Gud Place Dem! V2/model/MainAttraction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Di Gud Place Dem! V2/model/ParishCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Di Gud Place Dem! V2/model/ParishCode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Di Gud Place Dem! V2/fileOperations/FileProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Di Gud Place Dem! V2/fileOperations/FileProcess.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Di Gud Place Dem! V2/model/Place.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Di Gud Place Dem! V2/model/Place.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Di Gud Place Dem! V2/presentation/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Di Gud Place Dem! V2/presentation/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Di Gud Place Dem! V2/presentation/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Di Gud Place Dem! V2/presentation/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/places" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/AddPlaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AddPlaceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/JTBAController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/JTBAController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fileOperations/FileProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileOperations/FileProcess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Place.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -236,5 +232,16 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/fileOperations/FileProcess.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

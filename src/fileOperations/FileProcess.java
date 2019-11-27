@@ -1,5 +1,6 @@
 package fileOperations;
 
+import javafx.scene.image.ImageView;
 import model.Place;
 
 import java.io.*;
@@ -24,19 +25,27 @@ public class FileProcess {
     }
 
     public static void readPlacesFromFile(){
-        try (ObjectInputStream reader = new ObjectInputStream(new FileInputStream("places"))) {
-            while(true){
+
+        ObjectInputStream reader = null;
+        try {
+                 reader = new ObjectInputStream(new FileInputStream("places"));
+            while(true) {
                 Place p = (Place) reader.readObject();
+                p.setUpImage();
                 list.add(p);
             }
-        } catch(NullPointerException y){
-            return; // file finished reading
-             }catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        }catch(NullPointerException e) {
+            //file not found
+            return;
+        }
+        catch (Exception exc){
+            //end of file eception
+            try {
+                if(reader != null)
+                reader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
