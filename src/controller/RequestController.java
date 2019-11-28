@@ -37,9 +37,11 @@ public class RequestController implements Initializable {
         request.setLastName(lname.getText());
         request.setAttractionName(attractionName.getText());
         request.setMessage(messageBox.getText());
+        request.setEmail(email.getText());
 
         //hand over to file processor
-        FileProcess.requestList.add(request);
+
+        FileProcess.treeList.add(request);
         FileProcess.writeRequestsToFile();
 
         Stage stage = (Stage) button.getScene().getWindow();

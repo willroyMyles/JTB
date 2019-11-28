@@ -1,5 +1,6 @@
 package fileOperations;
 
+import javafx.collections.FXCollections;
 import javafx.scene.image.ImageView;
 import model.MainAttraction;
 import model.ParishCode;
@@ -57,10 +58,10 @@ public class FileProcess {
     public static void writeRequestsToFile(){
         try {
             ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream("requests"));
-            for (Request p: requestList
-            ) {
-                writer.writeObject(p);
-            }
+
+
+                writer.writeObject(treeList);
+
             writer.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -73,15 +74,15 @@ public class FileProcess {
         try {
             reader = new ObjectInputStream(new FileInputStream("requests"));
             while(true) {
-                Request p = (Request) reader.readObject();
-                requestList.add(p);
+                treeList = (BinaryTree) reader.readObject();
             }
         }catch(NullPointerException e) {
             //file not found
             return;
         }
         catch (Exception exc){
-            //end of file eception
+            //end of file exception
+            treeList.updateButtons(treeList.root);
             try {
                 if(reader != null)
                     reader.close();

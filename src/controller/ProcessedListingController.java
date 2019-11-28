@@ -13,10 +13,9 @@ import model.Request;
 
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
-public class RequestListingController implements Initializable {
+public class ProcessedListingController implements Initializable {
 
     @FXML
     TableColumn cfname, clname, cemail, cattraction, cmessage, cdate, cbutton;
@@ -42,10 +41,11 @@ public class RequestListingController implements Initializable {
         cattraction.setCellValueFactory(new PropertyValueFactory("attractionName"));
         cmessage.setCellValueFactory(new PropertyValueFactory("message"));
         cdate.setCellValueFactory(new PropertyValueFactory("datetimeString"));
-        cbutton.setCellValueFactory(new PropertyValueFactory("button"));
+        cbutton.setCellValueFactory(new PropertyValueFactory("processed"));
 
         ArrayList<Request> list = new ArrayList<Request>();
-        list = FileProcess.treeList.getRequestlistInOrder(FileProcess.treeList.root, list);
+        list = FileProcess.treeList.getRequestlistProcessed(FileProcess.treeList.root, list);
         table.setItems(FXCollections.observableList(list));
+
     }
 }

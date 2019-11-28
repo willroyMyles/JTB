@@ -3,8 +3,10 @@ package fileOperations;
 import model.Place;
 import model.Request;
 
+import java.io.Serializable;
 
-class Node {
+
+class Node implements Serializable {
     Request value;
     Node left;
     Node right;

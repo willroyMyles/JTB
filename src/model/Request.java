@@ -1,5 +1,9 @@
 package model;
 
+import fileOperations.FileProcess;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
+
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -17,6 +21,15 @@ public class Request implements Serializable {
     private String datetimeString;
     private Date date;
     private boolean processed = false;
+    private transient Button button;
+
+    public Button getButton() {
+        return button;
+    }
+
+    public void setButton(Button button) {
+        this.button = button;
+    }
 
     public boolean isProcessed() {
         return processed;
@@ -98,6 +111,18 @@ public class Request implements Serializable {
         this.date = date;
     }
 
+    public void setUpButton(){
+        button = new Button("process");
+        if(isProcessed()) button.setDisable(true);
+        button.setOnAction( e->{
+            this.processed = true;
+            FileProcess.treeList.updateProcessedNode(FileProcess.treeList.root, requestId);
+            FileProcess.writeRequestsToFile();
+            Stage stage = (Stage) button.getScene().getWindow();
+            stage.hide();
+        });
+    }
+
     public Request() {
         requestId = UUID.randomUUID().toString();
         attractionId = UUID.randomUUID().toString();
@@ -105,5 +130,7 @@ public class Request implements Serializable {
         SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
         date = new Date(System.currentTimeMillis());
         datetimeString = formatter.format(date);
+        setUpButton();
+
     }
 }

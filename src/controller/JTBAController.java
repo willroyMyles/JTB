@@ -37,13 +37,23 @@ public class JTBAController {
     }
 
     @FXML
-    private void viewRequestLog(){
-
+    private void viewRequestLog() throws IOException {
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/views/requestListing.fxml"));
+        stage.setScene(new Scene(root));
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.initOwner(label.getScene().getWindow());
+        stage.showAndWait();
     }
 
     @FXML
-    private void viewProcessedLogs(){
-
+    private void viewProcessedLogs() throws IOException {
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/views/processedListing.fxml"));
+        stage.setScene(new Scene(root));
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.initOwner(label.getScene().getWindow());
+        stage.showAndWait();
     }
 
 }
