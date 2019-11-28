@@ -1,14 +1,15 @@
 package fileOperations;
 
 import model.Place;
+import model.Request;
 
 
 class Node {
-    Place value;
+    Request value;
     Node left;
     Node right;
 
-   Node(Place p){
+   Node(Request p){
        super();
        this.value = p;
        right = null;

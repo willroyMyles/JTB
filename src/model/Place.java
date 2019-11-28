@@ -82,10 +82,7 @@ public class Place implements Serializable {
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
-
-            //sets this main attractuiion to last main attraction
-
-            //((AnchorPane) (root)).getChildren().add(button);
+            
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.initModality(Modality.APPLICATION_MODAL);

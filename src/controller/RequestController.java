@@ -4,18 +4,23 @@ import fileOperations.FileProcess;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import model.Request;
 
+import javax.swing.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class RequestController implements Initializable {
 
     @FXML
-    TextField fname, lname, email, attractionName, requestid, dateAndTime, attractionGeneratedId, messageBox;
+    TextField fname, lname, email, attractionName, requestid, dateAndTime, attractionGeneratedId;
     @FXML
     Button button;
+    @FXML
+    TextArea messageBox;
 
     Request request = null;
 
@@ -34,7 +39,11 @@ public class RequestController implements Initializable {
         request.setMessage(messageBox.getText());
 
         //hand over to file processor
+        FileProcess.requestList.add(request);
+        FileProcess.writeRequestsToFile();
 
+        Stage stage = (Stage) button.getScene().getWindow();
+        stage.hide();
 
     }
 

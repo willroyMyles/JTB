@@ -4,6 +4,7 @@ import javafx.scene.image.ImageView;
 import model.MainAttraction;
 import model.ParishCode;
 import model.Place;
+import model.Request;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -12,6 +13,8 @@ import java.util.List;
 public class FileProcess {
 
     public static ArrayList<Place> list = new ArrayList<>();
+    public static ArrayList<Request> requestList = new ArrayList<>();
+    public static BinaryTree treeList = new BinaryTree();
 
     public static void writePlacesToFile(){
         try {
@@ -45,6 +48,43 @@ public class FileProcess {
             try {
                 if(reader != null)
                 reader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void writeRequestsToFile(){
+        try {
+            ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream("requests"));
+            for (Request p: requestList
+            ) {
+                writer.writeObject(p);
+            }
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void readRequestsFromFile(){
+
+        ObjectInputStream reader = null;
+        try {
+            reader = new ObjectInputStream(new FileInputStream("requests"));
+            while(true) {
+                Request p = (Request) reader.readObject();
+                requestList.add(p);
+            }
+        }catch(NullPointerException e) {
+            //file not found
+            return;
+        }
+        catch (Exception exc){
+            //end of file eception
+            try {
+                if(reader != null)
+                    reader.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }

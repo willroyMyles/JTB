@@ -16,13 +16,13 @@
          </font>
       </Label>
       <TextField fx:id="fname" layoutX="14.0" layoutY="103.0" promptText="First name" />
-      <TextField fx:id="lanem" layoutX="14.0" layoutY="134.0" promptText="Last name" />
+      <TextField fx:id="lname" layoutX="14.0" layoutY="134.0" promptText="Last name" />
       <TextField fx:id="email" layoutX="14.0" layoutY="166.0" promptText="Email" />
       <TextField fx:id="attractionGeneratedId" editable="false" layoutX="279.0" layoutY="103.0" prefHeight="25.0" prefWidth="288.0" promptText="atract generated" />
       <TextField fx:id="attractionName" editable="false" layoutX="14.0" layoutY="200.0" promptText="attraction name" />
       <TextField fx:id="requestid" editable="false" layoutX="14.0" layoutY="234.0" promptText="request id" />
       <TextField fx:id="dateAndTime" editable="false" layoutX="14.0" layoutY="269.0" prefHeight="25.0" prefWidth="217.0" promptText="date and time" />
       <Button fx:id="button" layoutX="167.0" layoutY="335.0" mnemonicParsing="false" onAction="#makeRequest" prefHeight="25.0" prefWidth="224.0" text="Request" />
-      <TextArea fx:id="messagebox" layoutX="280.0" layoutY="133.0" prefHeight="159.0" prefWidth="288.0" promptText="Message..." />
+      <TextArea fx:id="messageBox" layoutX="280.0" layoutY="133.0" prefHeight="159.0" prefWidth="288.0" promptText="Message..." />
    </children>
 </AnchorPane>

@@ -1,10 +1,11 @@
 package model;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
-public class Request {
+public class Request implements Serializable {
 
     private String firstName;
     private String lastName;
@@ -15,6 +16,15 @@ public class Request {
     private String message;
     private String datetimeString;
     private Date date;
+    private boolean processed = false;
+
+    public boolean isProcessed() {
+        return processed;
+    }
+
+    public void setProcessed(boolean processed) {
+        this.processed = processed;
+    }
 
     public String getFirstName() {
         return firstName;

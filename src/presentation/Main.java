@@ -22,6 +22,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
 
         FileProcess.readPlacesFromFile();
+        FileProcess.readRequestsFromFile();
 
         mainStage = primaryStage;
         root = FXMLLoader.load(getClass().getResource("/views/main.fxml"));
