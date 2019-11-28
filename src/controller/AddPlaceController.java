@@ -77,6 +77,7 @@ public class AddPlaceController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         ObservableList<String> parishCodes = FXCollections.observableArrayList(
+                ParishCode.getParish(0),
                 ParishCode.getParish(1),
                 ParishCode.getParish(2),
                 ParishCode.getParish(3),
@@ -88,8 +89,7 @@ public class AddPlaceController implements Initializable {
                 ParishCode.getParish(9),
                 ParishCode.getParish(10),
                 ParishCode.getParish(11),
-                ParishCode.getParish(12),
-                ParishCode.getParish(13));
+                ParishCode.getParish(12));
         parishChoice.setItems(parishCodes);
 
         ObservableList<String> attraction = FXCollections.observableArrayList(MainAttraction.JerkChicken.name(),MainAttraction.RiverTours.name(), MainAttraction.WaterSlides.name());

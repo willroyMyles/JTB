@@ -1,6 +1,8 @@
 package fileOperations;
 
 import javafx.scene.image.ImageView;
+import model.MainAttraction;
+import model.ParishCode;
 import model.Place;
 
 import java.io.*;
@@ -49,4 +51,42 @@ public class FileProcess {
         }
     }
 
+    public static MainAttraction lastRequestAttraction = null;
+
+    public static ArrayList<Place> getListbyParish(int code){
+        ArrayList<Place> al = new ArrayList<>();
+        for(Place p : list){
+            if (p.getParishCode() == code){
+                p.setupButton(false);
+                al.add(p);
+            }
+        }
+        return al;
+    }
+
+    public static ArrayList<Place> getListbyLowestCost(){
+        ArrayList<Place> al = list;
+        al.sort((place, t1) -> {
+            if(place.getCostForEntry() < t1.getCostForEntry()) return -1;
+            else return 1;
+        });
+
+        for(Place p : al){
+            p.setupButton(false);
+        }
+
+        return al;
+    }
+
+    public static ArrayList<Place> getListByAttraction(MainAttraction code) {
+
+        ArrayList<Place> al = new ArrayList<>();
+        for(Place p : list){
+            if (p.getMainAttraction() == code){
+                p.setupButton(false);
+                al.add(p);
+            }
+        }
+        return al;
+    }
 }

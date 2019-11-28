@@ -20,43 +20,43 @@ public class ParishCode{
      public static String getParish(int parishCode){
          String current = "";
          switch (parishCode){
-             case 1:
-                 current = "Kingston $ St. Andrew";
+             case 0:
+                 current = "Kingston & St. Andrew";
                  break;
-             case 2:
+             case 1:
                  current ="St. Thomas";
                  break;
-             case 3:
+             case 2:
                  current = "Portland";
                  break;
-             case 4:
+             case 3:
                  current = "St. Mary";
                  break;
-             case 5:
+             case 4:
                  current = "St. Cathrine";
                  break;
-             case 6:
+             case 5:
                  current = "Clarendon";
                  break;
-             case 7:
+             case 6:
                  current = "Manchester";
                  break;
-             case 8:
+             case 7:
                  current = "St. Ann";
                  break;
-             case 9:
+             case 8:
                  current = "St. Elizebeth";
                  break;
-             case 10:
+             case 9:
                  current = "St. James";
                  break;
-             case 11:
+             case 10:
                  current = "Hanover";
                  break;
-             case 12:
+             case 11:
                  current = "Westmoreland";
                  break;
-             case 13:
+             case 12:
                  current = "Trelawney";
                  break;
              default:

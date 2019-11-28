@@ -1,6 +1,7 @@
 package model;
 
 import controller.ViewAllPlacesController;
+import fileOperations.FileProcess;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,6 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.IOException;
@@ -46,21 +48,44 @@ public class Place implements Serializable {
 
     public Place() {
         this.guid = UUID.randomUUID().toString();
-       setupButton();
+       setupButton(true);
     }
 
-    private void setupButton(){
+    public void setupButton(boolean action ){
         button = new Button("photo");
-        button.setOnAction(e->{
+        if(action)  button.setOnAction(e->{
+            button.setText("Photo");
             Stage stage = new Stage();
             Parent root = null;
             try {
-                root = FXMLLoader.load(getClass().getResource("/views/main.fxml"));
+                root = FXMLLoader.load(getClass().getResource("/views/blank.fxml"));
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
 
             ((AnchorPane) (root)).getChildren().add(getImage());
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            //stage.initOwner(scene.getWindow());
+            stage.showAndWait();
+        });
+        //set button to show more
+        else button.setOnAction(e->{
+            FileProcess.lastRequestAttraction = this.getMainAttraction();
+
+            button.setText("Request Additional Info");
+            Stage stage = new Stage();
+            Parent root = null;
+            try {
+                root = FXMLLoader.load(getClass().getResource("/views/visitorRequest.fxml"));
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+
+            //sets this main attractuiion to last main attraction
+
+            //((AnchorPane) (root)).getChildren().add(button);
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.initModality(Modality.APPLICATION_MODAL);
@@ -81,12 +106,12 @@ public class Place implements Serializable {
         this.costForEntry = costForEntry;
         this.openingHours = openingHours;
         setUpImage();
-        setupButton();
+        setupButton(true);
     }
 
     public void setUpImage(){
         this.image = new ImageView(new File(photoLink).toURI().toString());
-        if(button == null) setupButton();
+        if(button == null) setupButton(true);
     }
 
     public String getGuid() {
